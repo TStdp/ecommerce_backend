@@ -1,0 +1,149 @@
+
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <base href="https://app.bsd.education">
+          <title>E-commerce Backend</title>
+          
+          
+          <link rel="stylesheet" href="https://app.bsd.education/resources/sandbox_templates/ecommerce-website/css/bootstrap.min.css" /><link rel="stylesheet" href="style.css" />
+          
+          
+          
+        </head>
+        <body>
+          
+    <!-- Page header -->
+    <nav class="navbar fixed-top">E-commerce</nav>
+    
+    <!-- Page content -->
+    <div id="content">
+        <!-- Side menu -->
+        <div id="sideMenu">
+            <ul>
+                <li onclick="showOrders()">Orders</li>
+                <li onclick="showProducts()">Products</li>
+            </ul>
+        </div>
+        
+        <!-- main content -->
+        <div id="mainContent">
+            
+            <!-- orders content -->
+            <div id="ordersContainer">
+                <h4>Orders</h4>
+                
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Buyer Name</th>
+                            <th>Buyer Email</th>
+                            <th>Buyer Address</th>
+                            <th>Orders</th>
+                            <th>Subtotal</th>
+                            <th>Order Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- products content -->
+            <div id="productsContainer" class="d-none">
+                <h4>
+                    Products
+                    <a class="btn btn-success" onclick="openNewProduct()">+ Add New</a>
+                </h4>
+                
+                <!-- product row -->
+                <div class="row">
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p class="m-0 py-3 text-center text-white">Copyright E-commerce Website. All rights reserved.</p>
+    </footer>
+    
+    <!-- Dark Overlay element -->
+    <div id="overlay" class="" onclick="overlayClicked()"></div>
+    
+    <!-- NEW PRODUCT -->
+    <div id="newProduct" class="">
+        <div class="sidebar-header">
+            New Product
+            <img class="close" onclick="overlayClicked()" src="https://app.bsd.education/resources/sandbox_templates/ecommerce-website/x-circle.svg">
+        </div>
+        <div class="sidebar-content">
+            <!-- product name -->
+            <label for="newProductName" class="form-label">Product Name</label>
+            <input type="text" class="form-control mb-3" id="newProductName" placeholder="product name">
+            
+            <!-- product price -->
+            <label for="newProductPrice" class="form-label">Product Price</label>
+            <input type="number" class="form-control mb-3" id="newProductPrice" min="0" placeholder="product price">
+            
+            <!-- product description -->
+            <label for="newProductDesc" class="form-label">Product Description</label>
+            <textarea class="form-control mb-3" id="newProductDesc" rows="5" placeholder="product description"></textarea>
+            
+            <!-- product image -->
+            <label for="newProductImageFile" class="form-label">Product Image</label>
+            <input type="text" class="form-control mb-3" id="newProductImageFile" oninput="previewNewProductImage()">
+            <img src="" class="img-fluid" id="newProductImagePreview">
+        </div>
+        <div class="footer">
+            <a class="btn btn-success" onclick="addNewProduct()">Add</a>
+            <a class="btn btn-danger" onclick="overlayClicked()">Cancel</a>
+        </div>
+    </div>
+    
+    <!-- Edit product -->
+    <div id="editProduct" class="">
+        <div class="sidebar-header">
+            Edit Product
+            <img class="close" onclick="overlayClicked()" src="https://app.bsd.education/resources/sandbox_templates/ecommerce-website/x-circle.svg">
+        </div>
+        <div class="sidebar-content">
+            
+            <!-- product id -->
+            <input type="hidden" id="productId">
+            
+            <!-- product name -->
+            <label for="productName" class="form-label">Product Name</label>
+            <input type="text" class="form-control mb-3" id="productName" placeholder="product name">
+            
+            <!-- product price -->
+            <label for="productPrice" class="form-label">Product Price</label>
+            <input type="number" class="form-control mb-3" id="productPrice" min="0">
+            
+            <!-- product description -->
+            <label for="productDescription" class="form-label">Product Description</label>
+            <textarea class="form-control mb-3" id="productDescription" rows="5"></textarea>
+            
+            <!-- product image -->
+            <label for="productImageFile" class="form-label">Product Image</label>
+            <input type="text" class="form-control mb-3" id="productImageFile" oninput="updateImagePreview()">
+            <img src="https://app.bsd.education/resources/sandbox_templates/ecommerce-website/placeholder.png" class="img-fluid" id="productImagePreview">
+        </div>
+        <div class="footer">
+            <a class="btn btn-success" onclick="updateProduct()">Update</a>
+            <a class="btn btn-danger" onclick="overlayClicked()">Cancel</a>
+        </div>
+    </div>
+    
+    
+    
+
+          
+          <script src="/resources/sandbox_templates/ecommerce-website/js/bootstrap.bundle.min.js"></script><script src="script.js"></script>
+          
+        </body>
+      </html>
+    
