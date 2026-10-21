@@ -80,7 +80,7 @@ function showProducts() {
 function getAllProducts() {
     db.get("allProducts").then(function(productList) {
         // store the product data in the global variable
-        allProducts = productList;
+        allProducts = productList || [];
         
         // reset the product row
         productsRow.innerHTML = "";
